@@ -1,0 +1,48 @@
+name: PR Check
+
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+      - reopened
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}-pr
+  cancel-in-progress: true
+
+jobs:
+  yargi-machine-pr:
+    if: |
+      github.event.pull_request.head.ref != 'chore/pre-release' &&
+      github.event.pull_request.head.ref != 'chore/upload-artifacts' &&
+      github.event.pull_request.head.ref != 'chore/pre-upload-artifacts' &&
+      !startsWith(github.event.pull_request.head.ref, 'release')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: setup node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "lts/*"
+          cache: 'npm'
+
+      - run: npm ci
+      - run: npm run build --if-present
+      - run: npm install -g .
+
+      - name: Check is running
+        run: yargi-machine --version
+
+      - name: Check branch title
+        run: yargi-machine pull-request -t "${{ github.event.pull_request.title }}"
+
+      - name: Get PR body
+        run: |
+          echo "${{ github.event.pull_request.body }}" > TEMP_TEMPLATE.md
+          echo "${{ github.event.pull_request.body }}"
+
+      - name: Check PR Checklist
+        run: yargi-machine pull-request -p TEMP_TEMPLATE.md
