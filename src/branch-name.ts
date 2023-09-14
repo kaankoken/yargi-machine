@@ -1,6 +1,6 @@
 const PATTERN = new RegExp(
 	'^(main|dev(?:elopment)?|master|' +
-	'(feat(?:ure)?|test|improvement|chore|issue|((?:bug)?|(?:hot)?)fix)' +
+	'(feat(?:ure)?|test|improvement|chore|issue|docs|((?:bug)?|(?:hot)?)fix)' +
 	'(/[a-zA-Z0-9]+(-[a-zA-Z0-9]+)*){1,2}|' +
 	'release/(?:v)?[0-9]+(.[0-9]+)*(-(alpha|beta|rc)[0-9]*(.[0-9]+)?)?)$'
 )
