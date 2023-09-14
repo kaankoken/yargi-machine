@@ -53,6 +53,7 @@ describe('validateConvention function', () => {
 			'release/1.0.0-beta.1',
 			'release/v1.0.0-beta1',
 			'chore/branch-name',
+			'docs/branch-name',
 		]
 
 		validBranchNames.forEach(branchName => {
@@ -93,7 +94,6 @@ describe('validateConvention function', () => {
 			'release/v1.0.0/beta.1',
 			'release/1.0.0_beta.1',
 			'release/v1.0.0.Beta1',
-			'docs/branch-name',
 		]
 
 		invalidBranchNames.forEach(branchName => {
