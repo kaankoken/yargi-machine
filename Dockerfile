@@ -27,4 +27,3 @@ RUN npm ci --omit=dev
 
 # The ENTRYPOINT to run the application
 ENTRYPOINT [ "node", "./dist/index.js" ]
-CMD ["help"]

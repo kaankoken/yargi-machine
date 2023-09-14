@@ -53,7 +53,7 @@ jobs:
 
       - name: Test the image
         run: |
-          docker run --rm ${{ env.IMAGE_NAME }}/${{ inputs.tag }}
+          docker run --rm ${{ env.IMAGE_NAME }}/${{ inputs.tag }} -V
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
