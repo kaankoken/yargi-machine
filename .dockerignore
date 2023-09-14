@@ -1,0 +1,14 @@
+.git/
+.github/
+test/
+docs/
+config/
+assets/
+coverage/
+.pre-commit*.yaml
+commitlint*.js
+node_modules
+*.log
+*.lock
+*.md
+dist
