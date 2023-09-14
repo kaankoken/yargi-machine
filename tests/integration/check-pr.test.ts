@@ -78,4 +78,3 @@ describe('checkPr function', () => {
 		expect(processExitStub.calledWith(1)).to.be.true
 	})
 })
-
