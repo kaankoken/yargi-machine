@@ -1,0 +1,21 @@
+name: "yargi-machine"
+description: "A cli tool to bring justice to your codebase and judge you."
+
+inputs:
+  pull-request:
+    description: "Pass for -t <title>, -b <branch-name>, -p <file>"
+    required: false
+
+outputs:
+  result:
+    description: "command output"
+
+runs:
+  using: "docker"
+  image: "Dockerfile.action"
+  args:
+    - "pull-request ${{ inputs.pull-request }}"
+
+branding:
+  icon: "triangle"
+  color: "blue"
