@@ -37,7 +37,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-           ${{ env.IMAGE_NAME }}/yargi-machine
+           ${{ env.IMAGE_NAME }}
           tags: |
             type=sha
             type=raw,value=latest
@@ -78,12 +78,12 @@ jobs:
 
       - name: Test the image
         run: |
-          docker run --rm ${{ env.IMAGE_NAME }}/${{ inputs.tag }} -V
+          docker run --rm ${{ env.IMAGE_NAME }} -V
 
       - name: Scan the image
         uses: anchore/sbom-action@v0
         with:
-          image: ${{ env.IMAGE_NAME }}/yargi-machine
+          image: ${{ env.IMAGE_NAME }}
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
