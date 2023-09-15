@@ -89,7 +89,7 @@ const main = () => {
 		if (command !== undefined) {
 			const options = command.opts()
 
-			if (options.checklist === undefined && options.branchName === undefined) {
+			if (options.checklist === undefined && options.branchName === undefined && options.title === undefined) {
 				command.help()
 			}
 		}
