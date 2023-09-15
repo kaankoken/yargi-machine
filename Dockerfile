@@ -23,7 +23,7 @@ WORKDIR /usr/src/app
 COPY --from=builder ./usr/src/app/dist ./dist
 COPY package*.json ./
 
-RUN npm ci --omit=dev
+RUN npm ci --omit=dev && npm link
 
 # The ENTRYPOINT to run the application
-ENTRYPOINT [ "node", "./dist/index.js" ]
+ENTRYPOINT [ "yargi-machine" ]
