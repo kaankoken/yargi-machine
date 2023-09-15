@@ -4,7 +4,7 @@ LABEL maintainer="Kaan Köken <kaan_taha_koken@hotmail.com>"
 LABEL repository="https://github.com/kaankoken/yargi-machine"
 LABEL homepage="https://github.com/kaankoken/yargi-machine"
 
-LABEL com.github.actions.name="Yargı Machine"
+LABEL com.github.actions.name="Yargi Machine"
 LABEL com.github.actions.description="A cli tool to bring justice to your codebase and judge you."
 LABEL com.github.actions.icon="triangle"
 LABEL com.github.actions.color="blue"
