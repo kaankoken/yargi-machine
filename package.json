@@ -1,6 +1,6 @@
 {
   "name": "yargi-machine",
-  "version": "0.1.2-rc.1",
+  "version": "0.2.0",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
