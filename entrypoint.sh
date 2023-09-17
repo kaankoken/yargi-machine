@@ -1,7 +1,7 @@
 #!/bin/sh -l
 
 # Execute yargi-machine
-_OUTPUT=$(yargi-machine "$@")
+_OUTPUT=$(eval yargi-machine $@)
 exit_code=$?
 
 # Set output file
