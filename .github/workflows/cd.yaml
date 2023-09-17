@@ -12,6 +12,11 @@ on:
         description: "The version tag"
         required: true
         type: string
+      is_head_master:
+        description: "Identify commit head as master or given tag"
+        required: true
+        type: boolean
+        default: true
 
 permissions:
   contents: read
@@ -29,8 +34,18 @@ jobs:
       packages: write
     steps:
       # For mobile project, generate apk or ipa for this step
+      - name: Get commit ref
+        if: inputs.is_head_master == 'true'
+        run: echo "REF=master" >> $GITHUB_ENV
+
+      - name: Get base ref
+        if: inputs.is_head_master ==  'false'
+        run: echo "REF=${{ inputs.tag }}" >> $GITHUB_ENV
+
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: ${{ env.REF }}
 
       - name: Docker metadata
         id: meta
