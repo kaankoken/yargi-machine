@@ -2,9 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.1.1] - 2023-09-14
+## [0.2.0] - 2023-09-17
 
-[5064f31](5064f31f62191fee9bbf4a6271b46a09b850d984)...[aa7fa2e](aa7fa2e8fc7bc1108db1d170163bab2f71599a44)
+[aa7fa2e](aa7fa2e8fc7bc1108db1d170163bab2f71599a44)...[70bbda7](70bbda7afd2f993d5988bcce61ba9fda18ab6d23)
+
+### ♺ Continuous Integration
+
+- Replace current with latest ([d892734](d89273494a815adbe6508c388b984c9464383f57))
+
+### 🐛 Bug Fixes
+
+- Spelling mistake ([70bbda7](70bbda7afd2f993d5988bcce61ba9fda18ab6d23))
+
+### 🚀 Build
+
+- Execute exit_code ([052a3af](052a3af3adfc7684fccf5bb9896a23596cf3e7c9))
+
+## [0.1.1] - 2023-09-14
 
 ### 🐛 Bug Fixes
 
