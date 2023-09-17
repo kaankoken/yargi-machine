@@ -2,8 +2,11 @@ name: "yargi-machine"
 description: "A cli tool to bring justice to your codebase and judge you."
 
 inputs:
-  pull-request:
-    description: "Pass for -t <title>, -b <branch-name>, -p <file>"
+  pull-request-command:
+    description: "Pass command for -t <title>, -b <branch-name>, -p <file>"
+    required: false
+  pull-request-value:
+    description: "Pass value for -t to <title>, -b to <branch-name>, -p to <file>"
     required: false
 
 outputs:
@@ -14,7 +17,7 @@ runs:
   using: "docker"
   image: "Dockerfile.action"
   args:
-    - "pull-request ${{ inputs.pull-request }}"
+    - pull-request ${{ inputs.pull-request-command }} "${{ inputs.pull-request-value }}"
 
 branding:
   icon: "triangle"
