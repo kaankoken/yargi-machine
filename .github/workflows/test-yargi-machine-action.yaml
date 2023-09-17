@@ -9,9 +9,10 @@ jobs:
       - uses: actions/checkout@v4
       - uses: kaankoken/yargi-machine@v0.2.0
         with:
-          pull-request: -t "fix':' asdasdasd"
+          pull-request-value: "fix: asdasdasd"
+          pull-request-command: "-t"
 
       - uses: kaankoken/yargi-machine@v0.2.0
         with:
-          pull-request: -t "asdasdasd"
-
+          pull-request-value: "fix asdasdasd"
+          pull-request-command: "-t"
