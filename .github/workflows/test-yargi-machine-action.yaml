@@ -10,9 +10,9 @@ jobs:
       - uses: kaankoken/yargi-machine@v0.2.0
         with:
           pull-request-value: "fix: asdasdasd"
-          pull-request-command: "-t"
+          pull-request-command: -t
 
       - uses: kaankoken/yargi-machine@v0.2.0
         with:
           pull-request-value: "fix asdasdasd"
-          pull-request-command: "-t"
+          pull-request-command: -t
