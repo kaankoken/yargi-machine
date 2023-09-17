@@ -35,11 +35,11 @@ jobs:
     steps:
       # For mobile project, generate apk or ipa for this step
       - name: Get commit ref
-        if: inputs.is_head_master == 'true'
+        if: inputs.is_head_master == true
         run: echo "REF=master" >> $GITHUB_ENV
 
       - name: Get base ref
-        if: inputs.is_head_master ==  'false'
+        if: inputs.is_head_master == false
         run: echo "REF=${{ inputs.tag }}" >> $GITHUB_ENV
 
       - name: Checkout repository
