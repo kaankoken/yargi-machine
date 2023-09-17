@@ -1,0 +1,16 @@
+name: test yargi-machine
+
+on: push
+
+jobs:
+  run-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: kaankoken/yargi-machine@v0.2.0
+        with:
+          pull-request: -t "fix':' asdasdasd"
+
+      - uses: kaankoken/yargi-machine@v0.2.0
+        with:
+          pull-request: -t "asdasdasd"
