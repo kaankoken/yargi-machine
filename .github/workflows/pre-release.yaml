@@ -121,7 +121,7 @@ jobs:
           OUTPUT: ./docs/CHANGELOG-pre.md
 
       - name: Update package version
-        run: npm version --no-git-tag-version "${{ needs.release.outputs.version }}"
+        run: npm version --no-git-tag-version "${{ needs.release.outputs.version }}" --allow-same-version
 
       - name: Create pull request
         id: cpr-pre
