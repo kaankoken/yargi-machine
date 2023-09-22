@@ -4,9 +4,9 @@
 _OUTPUT=$(eval yargi-machine $@)
 exit_code=$?
 
-# Set output file
-echo $_OUTPUT
-echo "result=$_OUTPUT" >> $GITHUB_OUTPUT
+echo "result<<EOF" >> $GITHUB_OUTPUT
+echo "$_OUTPUT" >> $GITHUB_OUTPUT
+echo "EOF" >> $GITHUB_OUTPUT
 
 # Pass exit code to the next step
 echo "exit_code=$exit_code" >> $GITHUB_OUTPUT
