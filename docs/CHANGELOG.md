@@ -2,9 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.2.0] - 2023-09-17
+## [0.2.1] - 2023-09-22
 
-[aa7fa2e](aa7fa2e8fc7bc1108db1d170163bab2f71599a44)...[70bbda7](70bbda7afd2f993d5988bcce61ba9fda18ab6d23)
+[6eb3f54](6eb3f542527d80df50d878bb10f37bac5d93f5e1)...[4c8f784](4c8f784c1eaef3899f20f80dc7bf03788528e650)
+
+### ⏪Revert
+
+- "fix: add multi-line output" ([4c8f784](4c8f784c1eaef3899f20f80dc7bf03788528e650))
+
+## [0.2.0] - 2023-09-17
 
 ### ♺ Continuous Integration
 
@@ -16,9 +22,19 @@ All notable changes to this project will be documented in this file.
 
 ### 🚀 Build
 
+- Fix entrypoint parsing issue ([6eb3f54](6eb3f542527d80df50d878bb10f37bac5d93f5e1))
+- Fix passing arguments ([f830e2b](f830e2b592c8e8189398795b362b7cd9d3f4cc43))
+- Remove README from action docker ([e560319](e560319de4be66b4f6c74e5fbdacd74b3a75980c))
+- Fix ref condition ([db58ea2](db58ea298e69c4808d106694131cc524880c7ec0))
+- Move stages after push ([230b3ee](230b3eec15782d852d09e7a4aa3b7071bc53d611))
+- Add ref to checkout ([42e51b3](42e51b329f48862fb886aab549fc796a5ce69191))
+- Fix platform manifest issue ([4dfc0f3](4dfc0f3342f5c3ba20fca0c69cc6b26356d8ea62))
+- Fix exporting manifest lists ([8757a3b](8757a3b950da7c9b1b86794b55f3b190e1236a0e))
 - Execute exit_code ([052a3af](052a3af3adfc7684fccf5bb9896a23596cf3e7c9))
 
 ## [0.1.1] - 2023-09-14
+
+[5064f31](5064f31f62191fee9bbf4a6271b46a09b850d984)...[aa7fa2e](aa7fa2e8fc7bc1108db1d170163bab2f71599a44)
 
 ### 🐛 Bug Fixes
 
