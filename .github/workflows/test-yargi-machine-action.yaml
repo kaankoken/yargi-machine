@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: kaankoken/yargi-machine@v0.2.0
+      - uses: kaankoken/yargi-machine@v0.2.1-rc.4
         with:
           pull-request-value: "fix: asdasdasd"
           pull-request-command: -t
