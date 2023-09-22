@@ -73,7 +73,7 @@ jobs:
         id: git-cliff-r
         with:
           config: ./config/cliff-pre.toml
-          args: -vv --latest --strip header
+          args: -vv --current --strip header
         env:
           OUTPUT: ./.CHANGES.md
 
