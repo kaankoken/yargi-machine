@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.1-rc.1] - 2023-09-22
+
+[bcde9b3](bcde9b3b64ded2d45745e4657eb00f58b15352a3)...[5c55d5c](5c55d5c0e1cd7ec5daea77b5d93ff41c93bd7af4)
+
+### ♺ Continuous Integration
+
+- Allow-same-version on package ([5c55d5c](5c55d5c0e1cd7ec5daea77b5d93ff41c93bd7af4))
+
+### 🐛 Bug Fixes
+
+- Add multi-line output support ([6fe9059](6fe905990540fbf6a2442215060238822139ee7f))
+
 ## [0.1.2-rc.1] - 2023-09-15
 
 ### ♺ Continuous Integration
