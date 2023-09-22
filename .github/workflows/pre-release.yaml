@@ -112,14 +112,6 @@ jobs:
           node-version: "lts/*"
           cache: 'npm'
 
-      - name: Generate a changelog
-        uses: orhun/git-cliff-action@v2
-        id: git-cliff
-        with:
-          config: ./config/cliff-pre.toml
-        env:
-          OUTPUT: ./docs/CHANGELOG-pre.md
-
       - name: Update package version
         run: npm version --no-git-tag-version "${{ needs.release.outputs.version }}" --allow-same-version
 
@@ -137,7 +129,6 @@ jobs:
           draft: false
           base: master
           add-paths: |
-            docs/CHANGELOG-pre.md
             package.json
             package-lock.json
           labels: |
