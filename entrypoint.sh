@@ -4,9 +4,10 @@
 _OUTPUT=$(eval yargi-machine $@)
 exit_code=$?
 
-echo "result<<EOF" >> $GITHUB_OUTPUT
-echo "$_OUTPUT" >> $GITHUB_OUTPUT
-echo "EOF" >> $GITHUB_OUTPUT
+delimiter="$(openssl rand -hex 8)"
+echo "result<<${delimiter}" >> "${GITHUB_OUTPUT}"
+echo "${_OUTPUT}" >> "${GITHUB_OUTPUT}"
+echo "${delimiter}" >> "${GITHUB_OUTPUT}"
 
 # Pass exit code to the next step
 echo "exit_code=$exit_code" >> $GITHUB_OUTPUT
