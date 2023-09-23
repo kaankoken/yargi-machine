@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.2] - 2023-09-23
+
+[4c8f784](4c8f784c1eaef3899f20f80dc7bf03788528e650)...[d7ec843](d7ec8437d760c4e0f68561bec9f321123af8ec4f)
+
+### ♺ Continuous Integration
+
+- Change current flag to latest ([68a8634](68a8634ebf2d30e86410d6e71ec432f8943ddafd))
+- Improve changelog ([385dfc3](385dfc36117893693445eb94fab255c971eb79b2))
+
+### ⚙️ Miscellaneous Tasks
+
+- Bump semantic release action v3 to v4 ([e18bd12](e18bd12aa8ade807b7e01096e0ddf709c85358ac))
+
+### 🔥 Hot Fixes
+
+- Correct major & latest label for staging & release ([d7ec843](d7ec8437d760c4e0f68561bec9f321123af8ec4f))
+
 ## [0.2.1] - 2023-09-22
 
 [6eb3f54](6eb3f542527d80df50d878bb10f37bac5d93f5e1)...[4c8f784](4c8f784c1eaef3899f20f80dc7bf03788528e650)
@@ -9,16 +26,61 @@ All notable changes to this project will be documented in this file.
 ### ⏪Revert
 
 - "fix: add multi-line output" ([4c8f784](4c8f784c1eaef3899f20f80dc7bf03788528e650))
+- "ci: swap latest with current" ([37ac98c](37ac98c12160569030ab030a79374401efd05b59))
+
+### ♺ Continuous Integration
+
+- Remove changelog generation for pre-releases ([b9b4f44](b9b4f44e43cc6d8ef4094874d1a0f7c94df21477))
+- Swap latest with current ([f4534cd](f4534cddcd1fedccdba948f8a66e7304b839bc8c))
+- Allow-same-version on package ([5c55d5c](5c55d5c0e1cd7ec5daea77b5d93ff41c93bd7af4))
+
+### ⚙️ Miscellaneous Tasks
+
+- Fix EOF ([61e1b6f](61e1b6f6d0bc4ba5296da988d13fbab83be7a893))
+
+### 🐛 Bug Fixes
+
+- Add multi-line output ([8c87a72](8c87a72a36bbb661721638ff131f8ea74cf968fa))
+- Add multi-line output support ([6fe9059](6fe905990540fbf6a2442215060238822139ee7f))
+
+### 📚 Documentation
+
+- Remove pre-release changelog ([20f014c](20f014c77903c52e177b4ef08a06d6452b94fe66))
+
+### 🚀 Build
+
+- Enable tag if not staging ([d3efe4f](d3efe4f10a919b2635a836cf4a6dcd62a5756eb3))
 
 ## [0.2.0] - 2023-09-17
+
+[aa7fa2e](aa7fa2e8fc7bc1108db1d170163bab2f71599a44)...[6eb3f54](6eb3f542527d80df50d878bb10f37bac5d93f5e1)
 
 ### ♺ Continuous Integration
 
 - Replace current with latest ([d892734](d89273494a815adbe6508c388b984c9464383f57))
+- Remove extra repo name ([24c4dfc](24c4dfc305c57fb6e580141c1cf43b5b89750a35))
+
+### ⚙️ Miscellaneous Tasks
+
+- Ignore name surname from cspell ([bd9daa2](bd9daa2fb39e31913c6cca3e8c1d4394e584a67a))
+
+### ⛰️ Features
+
+- Add action ([d35855f](d35855f12d7c14f438852011d33d0c4283c67a56))
+
+### 🎨 Styling
+
+- Fix max-line-length ([bcde9b3](bcde9b3b64ded2d45745e4657eb00f58b15352a3))
 
 ### 🐛 Bug Fixes
 
 - Spelling mistake ([70bbda7](70bbda7afd2f993d5988bcce61ba9fda18ab6d23))
+- Add missing option ([459097b](459097bc98fbfaef29e248f1f7f9528a110f83cb))
+
+### 📚 Documentation
+
+- Correct repo on CI badge ([7491865](7491865b9993f93bf0982b0d425cd1af380a52d4))
+- Add badge ([45c2cfa](45c2cfa9bcc6cbc0164f4a4d149a5d52a957e7c3))
 
 ### 🚀 Build
 
@@ -31,6 +93,10 @@ All notable changes to this project will be documented in this file.
 - Fix platform manifest issue ([4dfc0f3](4dfc0f3342f5c3ba20fca0c69cc6b26356d8ea62))
 - Fix exporting manifest lists ([8757a3b](8757a3b950da7c9b1b86794b55f3b190e1236a0e))
 - Execute exit_code ([052a3af](052a3af3adfc7684fccf5bb9896a23596cf3e7c9))
+- Link cli tool ([6511a0b](6511a0b640db775b810ce8e3571d68ac85030701))
+- Correct main entry ([a5e7ebe](a5e7ebeaf0881bcf82d9f3ddacf8ed7a7e240c7c))
+- Improve docker process ([7247848](724784840cd0bcc4bfd1270435b7aed27d83daac))
+- Fix docker image version ([f898e70](f898e7033475a5503b0e74b848392cb695afb451))
 
 ## [0.1.1] - 2023-09-14
 
