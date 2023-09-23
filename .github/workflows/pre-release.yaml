@@ -40,7 +40,9 @@ jobs:
           ref: ${{ env.REF }}
 
       - name: install convco
-        run: cargo install convco
+        uses: kaankoken/install@master
+        with:
+          crate: convco
 
       - name: get next version
         id: release
