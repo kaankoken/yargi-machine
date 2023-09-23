@@ -7,12 +7,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: kaankoken/yargi-machine@v0.2.1-rc.1
+      - uses: kaankoken/yargi-machine@v0.2.2
         with:
           pull-request-value: "fix: asdasdasd"
           pull-request-command: -t
 
-      - uses: kaankoken/yargi-machine@v0.2.1-rc.1
+      - uses: dtolnay/install@master
+        with:
+          crate: convco
+      - run: convco --help
+
+
+      - uses: kaankoken/yargi-machine@v0.2.2
         with:
           pull-request-value: "fix asdasdasd"
           pull-request-command: -t
