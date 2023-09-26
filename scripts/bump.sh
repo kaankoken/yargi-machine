@@ -5,8 +5,21 @@
 version=""
 isPrerelease=false
 _type=""
-gitHead="$(git rev-parse HEAD)"
-x=""
+_lastRelease="$(git describe --tags --abbrev=0)"
+
+# Check if value of `lastRelease` is empty
+if [ "" == "$_lastRelease" ]
+then
+  exit 0
+fi
+
+# Check if the value of `lastRelease` has `-rc`
+if [[ "$_lastRelease" == *-rc* ]]
+then
+  version=$(sh "$PWD/scripts/semver.sh" bump prerelease "rc.." "$_lastRelease")
+  isPrerelease=true
+fi
+
 for arg in "$@"; do
   # Check if the argument contains an equals sign (=)
   if [[ $arg == *'='* ]]; then
@@ -18,19 +31,6 @@ for arg in "$@"; do
     if ([ "release" == "$value" ] && [ "$key" == "env" ]) || ([ "" == "$value" ] && [ "$key" == "env" ])
     then
       exit 0
-    fi
-
-    # Check if the key is `lastRelease` and the `value` is empty
-    if [ "" == "$value" ] && [ "$key" == "lastRelease" ]
-    then
-      exit 0
-    fi
-
-    # Check if the key is `lastRelease` and the value contains `-rc`
-    if [ "$key" == "lastRelease" ] && [[ "$value" == *-rc* ]]
-    then
-      version=$(sh "$PWD/scripts/semver.sh" bump prerelease "rc.." "$value")
-      isPrerelease=true
     fi
 
     if [ "$key" == "lastRelease" ] && [[ "$value" != *-rc* ]]
@@ -49,14 +49,8 @@ for arg in "$@"; do
     then
       _type="$value"
     fi
-
-    if [ "$key" == "x" ]
-    then
-      x="$value"
-    fi
   fi
 done
-
 #result='{"type":"'"$_type"'","gitHead":"'"$gitHead"'","version":"'"$version"'","gitTag":"v'"$version"'","notes":"","channel":null}'
 echo $version
 echo "version=$version" >> $GITHUB_OUTPUT

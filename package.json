@@ -81,11 +81,10 @@
           ]
         }
       ],
-      "@semantic-release/github",
       [
         "@semantic-release/exec",
         {
-          "verifyReleaseCmd": "sh $PWD/scripts/bump.sh env=$ENV lastRelease=${lastRelease.version} type=${nextRelease.type}"
+          "verifyReleaseCmd": "echo \"env=$ENV\" | sh $PWD/scripts/bump.sh type=${nextRelease.type}"
         }
       ]
     ],
