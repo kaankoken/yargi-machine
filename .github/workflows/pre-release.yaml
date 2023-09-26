@@ -46,6 +46,8 @@ jobs:
         id: semantic-pre
         with:
           dry_run: true
+          extra_plugins: |
+            @semantic-release/exec
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
