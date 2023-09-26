@@ -18,8 +18,10 @@ jobs:
     permissions:
       contents: write # to be able to publish a GitHub release
     outputs:
-      version: ${{ steps.release.outputs.version }}
+      version: ${{ steps.semantic-pre.outputs.version }}
       ref: ${{ steps.ref.outputs.ref }}
+    env:
+      ENV: "prerelease"
     steps:
       - name: Get commit ref
         if: inputs.commit != ''
@@ -31,23 +33,31 @@ jobs:
 
       - name: Set ref
         id: ref
-        run: echo "ref=${{ env.REF }}" >> "GITHUB_OUTPUT"
+        run: echo "ref=${{ env.REF }}" >> $GITHUB_OUTPUT
 
       - name: checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           ref: ${{ env.REF }}
-
-      - name: install convco
-        uses: kaankoken/install@master
-        with:
-          crate: convco
-
-      - name: get next version
-        id: release
+      - name: get semver tool
         run: |
-          echo "version=$(convco version --bump --prerelease rc)" >> "$GITHUB_OUTPUT"
+          wget -O /usr/local/bin/semver https://raw.githubusercontent.com/fsaintjacques/semver-tool/master/src/semver
+          chmod +x /usr/local/bin/semver
+          semver --version
+
+          cp ./scripts/bump /usr/local/bin/bump
+          chmod +x /usr/local/bin/bump
+
+      - name: Semantic Release
+        uses: cycjimmy/semantic-release-action@v4
+        id: semantic-pre
+        with:
+          dry_run: true
+          extra_plugins: |
+            @semantic-release/exec
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   release-notes:
     name: Generate Release notes

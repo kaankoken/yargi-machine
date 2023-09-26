@@ -10,6 +10,7 @@ ignorePaths:
   - .pre-commit-config.yaml
   - "**/*.sketch"
   - "**/*.svg"
+  - "scripts/semver.sh"
 dictionaryDefinitions: []
 dictionaries: []
 ignoreWords:
@@ -32,4 +33,6 @@ ignoreWords:
   - Kaan
   - Köken
   - kaankoken
+  - ALPHANUM
+  - proto
 import: []
