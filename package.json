@@ -25,6 +25,7 @@
     "@commitlint/cli": "^17.6.6",
     "@commitlint/config-angular": "^17.6.6",
     "@istanbuljs/nyc-config-typescript": "^1.0.2",
+    "@semantic-release/exec": "^6.0.3",
     "@types/chai": "^4.3.5",
     "@types/mocha": "^10.0.1",
     "@types/node": "^20.4.9",
@@ -80,7 +81,13 @@
           ]
         }
       ],
-      "@semantic-release/github"
+      "@semantic-release/github",
+      [
+        "@semantic-release/exec",
+        {
+          "verifyReleaseCmd": "sh $PWD/scripts/bump.sh env=$ENV lastRelease=${lastRelease.version} type=${nextRelease.type}"
+        }
+      ]
     ],
     "preset": "angular",
     "tagFormat": "v${version}"
