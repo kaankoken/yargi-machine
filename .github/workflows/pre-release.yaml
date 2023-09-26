@@ -20,6 +20,8 @@ jobs:
     outputs:
       version: ${{ steps.release.outputs.version }}
       ref: ${{ steps.ref.outputs.ref }}
+    env:
+      ENV: "prerelease"
     steps:
       - name: Get commit ref
         if: inputs.commit != ''
@@ -31,7 +33,7 @@ jobs:
 
       - name: Set ref
         id: ref
-        run: echo "ref=${{ env.REF }}" >> "GITHUB_OUTPUT"
+        run: echo "ref=${{ env.REF }}" >> $GITHUB_OUTPUT
 
       - name: checkout
         uses: actions/checkout@v4
@@ -39,15 +41,13 @@ jobs:
           fetch-depth: 0
           ref: ${{ env.REF }}
 
-      - name: install convco
-        uses: kaankoken/install@master
+      - name: Semantic Release
+        uses: cycjimmy/semantic-release-action@v4
+        id: semantic-pre
         with:
-          crate: convco
-
-      - name: get next version
-        id: release
-        run: |
-          echo "version=$(convco version --bump --prerelease rc)" >> "$GITHUB_OUTPUT"
+          dry_run: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   release-notes:
     name: Generate Release notes
