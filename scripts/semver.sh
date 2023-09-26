@@ -418,9 +418,9 @@ function command_get {
 
 function command_validate {
   if [[ "$#" -ne "1" ]]; then
-        usage_help
-  fi  
-  
+    usage_help
+  fi
+
   if [[ "$1" =~ $SEMVER_REGEX ]]; then
     echo "valid"
   else
