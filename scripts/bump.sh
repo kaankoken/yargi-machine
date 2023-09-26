@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Loop through all arguments
+set -x
 
 version=""
 isPrerelease=false
@@ -20,6 +20,7 @@ then
   isPrerelease=true
 fi
 
+# Loop through all arguments
 for arg in "$@"; do
   # Check if the argument contains an equals sign (=)
   if [[ $arg == *'='* ]]; then
