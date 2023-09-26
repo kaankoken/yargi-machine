@@ -18,7 +18,7 @@ jobs:
     permissions:
       contents: write # to be able to publish a GitHub release
     outputs:
-      version: ${{ steps.release.outputs.version }}
+      version: ${{ steps.semantic-pre.outputs.version }}
       ref: ${{ steps.ref.outputs.ref }}
     env:
       ENV: "prerelease"
@@ -40,6 +40,11 @@ jobs:
         with:
           fetch-depth: 0
           ref: ${{ env.REF }}
+      - name: get semver tool
+        run: |
+          wget -O /usr/local/bin/semver https://raw.githubusercontent.com/fsaintjacques/semver-tool/master/src/semver
+          chmod +x /usr/local/bin/semver
+          semver --version
 
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v4
