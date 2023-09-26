@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# Loop through all arguments
+#set -x
 
 version=""
 isPrerelease=false
@@ -8,21 +8,23 @@ _type=""
 _lastRelease="$(git describe --tags --abbrev=0)"
 
 # Check if value of `lastRelease` is empty
-if [ "" == "$_lastRelease" ]
+if [ -z "$_lastRelease" ]
 then
   exit 0
 fi
 
 # Check if the value of `lastRelease` has `-rc`
-if [[ "$_lastRelease" == *-rc* ]]
+if [[ $_lastRelease == *-rc* ]]
 then
-  version=$(sh "$PWD/scripts/semver.sh" bump prerelease "rc.." "$_lastRelease")
+  version=$(semver bump prerelease "rc.." "$_lastRelease")
   isPrerelease=true
 fi
 
+# Loop through all arguments
 for arg in "$@"; do
   # Check if the argument contains an equals sign (=)
-  if [[ $arg == *'='* ]]; then
+  if [[ $arg == *"="* ]]
+  then
     # Split the argument into key and value
     key="${arg%%=*}"
     value="${arg#*=}"
@@ -41,7 +43,7 @@ for arg in "$@"; do
     # Check if the key is `type` and the `version` is empty
     if [ "$key" == "type" ] && [ "$isPrerelease" == "false" ]
     then
-      version=$(sh "$PWD/scripts/semver.sh" bump "$value" "$version")
+      version=$(semver bump "$value" "$version")
       version="${version}-rc.1"
     fi
 
