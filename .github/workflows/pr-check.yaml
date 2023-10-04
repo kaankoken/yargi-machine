@@ -18,7 +18,7 @@ jobs:
       github.event.pull_request.head.ref != 'chore/pre-release' &&
       github.event.pull_request.head.ref != 'chore/upload-artifacts' &&
       github.event.pull_request.head.ref != 'chore/pre-upload-artifacts' &&
-      !startsWith(github.event.pull_request.head.ref, 'release')
+      !startsWith(github.event.pull_request.head.ref, 'release') &&
       !startsWith(github.event.pull_request.head.ref, 'dependabot')
     runs-on: ubuntu-latest
     steps:
