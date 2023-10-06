@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.3] - 2023-10-06
+
+[d7ec843](d7ec8437d760c4e0f68561bec9f321123af8ec4f)...[c85d700](c85d7000bf6033439fe73dd6c35de2f6af2d622a)
+
+### ♺ Continuous Integration
+
+- Fix script path ([c85d700](c85d7000bf6033439fe73dd6c35de2f6af2d622a))
+- Fix plugin for release ([533506f](533506f941a7be0de3b793757b53c606762ca01b))
+- Update cspell version ([be53ceb](be53ceb4a443cf9a9d5225634c667505fd2409b6))
+- Fix add missing amp sign ([a000ae0](a000ae02acf70f61e2e91e7782e6c154b7a15401))
+- Discard dependabot on pr-check ([1166926](1166926a67d2ea8f3316af4b6ce2ad1096df438c))
+- Discard dependabot ([a6e320b](a6e320bd19c1f3d5b485b1902a6d8ac1dab9f257))
+
+### ⚙️ Miscellaneous Tasks
+
+- Update lock file ([d182c3f](d182c3f7ca65d6976f16384def79323143ef43c9))
+
+### ⚡Performance
+
+- Use precompiled signed binary ([011453d](011453da860981032a3e5372e90a17a7f2c290d0))
+
+### 🐛 Bug Fixes
+
+- Pre-release issue ([a887fee](a887fee4242ab1cc4d65c131da52f61d2854c59e))
+
 ## [0.2.2] - 2023-09-23
 
 [4c8f784](4c8f784c1eaef3899f20f80dc7bf03788528e650)...[d7ec843](d7ec8437d760c4e0f68561bec9f321123af8ec4f)
